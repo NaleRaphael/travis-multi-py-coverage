@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# NOTE: least required environment variables
+# - GITHUB_USER: your github user name
+# - GITHUB_REPO: name of repository
+# - GITHUB_TOKEN: used to authorize travis-ci to access your respository
+
 setup_git_for_travis() {
     git config user.email "travis@travis-ci.org"
     git config user.name "Travis CI"
