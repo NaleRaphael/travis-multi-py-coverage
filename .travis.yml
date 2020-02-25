@@ -1,0 +1,28 @@
+language: python
+os: linux
+
+sudo: false
+
+python:
+  - 3.6
+  - 3.7
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+  pip: true
+
+jobs:
+  include:
+    - stage: combine coverage files
+      python: 3.7
+      script: .travis/gen_report.sh
+
+before_cache:
+  - rm -f $HOME/.cache/pip/log/debug.log
+
+before_install:
+  - pip install -U pytest
+  - pip install -U pytest-cov
+
+script: .travis/runtests.sh
