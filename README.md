@@ -39,7 +39,7 @@ In this repository, it shows how to:
 
 6. Set up file permission of bash files
     ```bash
-    $ git update-index --add .travis/*.sh
+    $ git update-index --chmod=+x --add .travis/*.sh
     ```
 
 7. Push to Github
